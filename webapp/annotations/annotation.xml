@@ -106,7 +106,6 @@
                         <Record Type="UI.ReferenceFacet">
                             <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating" />
                         </Record>
-                        
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.SelectionFields" >
