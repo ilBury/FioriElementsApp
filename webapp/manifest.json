@@ -55,7 +55,7 @@
   "sap.ui5": {
     "flexEnabled": true,
     "dependencies": {
-      "minUI5Version": "1.120.0",
+      "minUI5Version": "1.120.7",
       "libs": {
         "sap.m": {},
         "sap.ui.core": {},
@@ -122,6 +122,22 @@
           "name": "sap.suite.ui.generic.template.ListReport",
           "list": true,
           "settings": {
+            "quickVariantSelection": {
+              "variants": {
+                "0": {
+                  "key": "_tab1",
+                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Beverages"
+                },
+                "1": {
+                  "key": "_tab2",
+                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Electronics"
+                },
+                "2": {
+                  "key": "_tab3",
+                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Food"
+                }
+              }
+            },
             "condensedTableLayout": true,
             "smartVariantManagement": true,
             "enableTableFilterInPageVariant": true,
@@ -143,11 +159,10 @@
             "component": {
               "name": "sap.suite.ui.generic.template.ObjectPage",
               "settings": {
-                
+                "showHeaderAsCarouselOnDesktop": true,
                 "showRelatedApps": true,
                 "gridTable": false,
-                "editableHeaderContent": true,
-                "simpleHeaderFacets":true
+                "editableHeaderContent": false
               }
             }
           }
