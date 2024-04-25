@@ -101,9 +101,12 @@
                 <Annotation Term="UI.HeaderFacets">
                     <Collection>
                         <Record Type="UI.ReferenceFacet">
-                            <PropertyValue Property="Label" String="{@i18n>InformationAreaText}" />
                             <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#HedData" />
                         </Record>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating" />
+                        </Record>
+                        
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.SelectionFields" >
@@ -113,15 +116,130 @@
                         <PropertyPath>Supplier/Name</PropertyPath>
                     </Collection>
                 </Annotation>
+               
                 <Annotation Term="UI.PresentationVariant">
-                    <Record >
-                        <PropertyValue Property="RequestAtLeast">
+                    <Record Type="UI.PresentationVariantType">
+                        <PropertyValue Property="SortOrder">
                             <Collection >
-                                <PropertyPath >ID</PropertyPath>
+                                <Record Type="Common.SortOrderType" >
+                                    <PropertyValue Property="Property" PropertyPath="ReleaseDate" />
+                                    <PropertyValue Property="Descending" Bool="true"  />
+                                </Record>
                             </Collection>
-                        </PropertyValue >
+                        </PropertyValue>
+                        <PropertyValue Property="GroupBy">
+                            <Collection>
+                                <PropertyPath>Category/Name</PropertyPath>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Visualizations">
+                            <Collection>
+                                <AnnotationPath>@UI.LineItem</AnnotationPath>
+                            </Collection>
+                        </PropertyValue>
                     </Record>
-                </Annotation >
+                </Annotation>
+
+                <Annotation Term="UI.SelectionVariant" Qualifier="all">
+                    <Record>
+                        <PropertyValue Property="Text" String="{@i18n>AllTableProductsText}">
+                        </PropertyValue>
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                    <Record Type="UI.SelectOptionType">
+                                        <PropertyValue Property="PropertyName" PropertyPath="Category/Name" />
+                                        <PropertyValue Property="Ranges">
+                                            <Collection>
+                                                <Record Type="UI.SelectionRangeType">
+                                                    <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/NE" />
+                                                    <PropertyValue Property="Low" String="" />
+                                                </Record>
+                                            </Collection>
+                                        </PropertyValue>
+                                    </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+
+                <Annotation Term="UI.SelectionVariant" Qualifier="Beverages">
+                    <Record>
+                        <PropertyValue Property="Text" String="{@i18n>CategoryBeveragesText}">
+                        </PropertyValue>
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                    <Record Type="UI.SelectOptionType">
+                                        <PropertyValue Property="PropertyName" PropertyPath="Category/Name" />
+                                        <PropertyValue Property="Ranges">
+                                            <Collection>
+                                                <Record Type="UI.SelectionRangeType">
+                                                    <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ" />
+                                                    <PropertyValue Property="Low" String="Beverages" />
+                                                </Record>
+                                            </Collection>
+                                        </PropertyValue>
+                                    </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.SelectionVariant" Qualifier="Electronics">
+                    <Record>
+                        <PropertyValue Property="Text" String="{@i18n>CategoryElectronicsText}">
+                        </PropertyValue>
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                    <Record Type="UI.SelectOptionType">
+                                        <PropertyValue Property="PropertyName" PropertyPath="Category/Name" />
+                                        <PropertyValue Property="Ranges">
+                                            <Collection>
+                                                <Record Type="UI.SelectionRangeType">
+                                                    <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ" />
+                                                    <PropertyValue Property="Low" String="Electronics" />
+                                                </Record>
+                                            </Collection>
+                                        </PropertyValue>
+                                    </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+                <Annotation Term="UI.SelectionVariant" Qualifier="Food">
+                    <Record>
+                        <PropertyValue Property="Text" String="{@i18n>CategoryFoodText}">
+                        </PropertyValue>
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                    <Record Type="UI.SelectOptionType">
+                                        <PropertyValue Property="PropertyName" PropertyPath="Category/Name" />
+                                        <PropertyValue Property="Ranges">
+                                            <Collection>
+                                                <Record Type="UI.SelectionRangeType">
+                                                    <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ" />
+                                                    <PropertyValue Property="Low" String="Food" />
+                                                </Record>
+                                            </Collection>
+                                        </PropertyValue>
+                                    </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                
+                <Annotation Term="UI.DataPoint" Qualifier="Rating">
+                    <Record>
+                        <PropertyValue Property="Value" Path="Rating" />
+                        <PropertyValue Property="TargetValue" Decimal="5" />
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating" />
+                    </Record>
+                </Annotation>
                 <Annotation Term="UI.LineItem">
                     <Collection>
                         <Record Type="UI.DataField">
@@ -144,6 +262,10 @@
                             <PropertyValue Property="Label" String="{@i18n>SupplierText}" />
                             <PropertyValue Property="Value" Path="Supplier/Name" />
                         </Record>
+                        <Record Type="UI.DataFieldForAnnotation">
+                            <PropertyValue Property="Label" String="{@i18n>RatingText}" />
+                            <PropertyValue Property="Target" AnnotationPath="@UI.DataPoint#Rating" />
+                        </Record>
                     </Collection>
                 </Annotation>
 
@@ -154,11 +276,6 @@
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Label" String="{@i18n>PriceText}" />
                                     <PropertyValue Property="Value" Path="Price"/>
-                                    <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
-                                </Record>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Label" String="{@i18n>RatingText}" />
-                                    <PropertyValue Property="Value" Path="Rating"/>
                                     <Annotation Term="UI.Importance" EnumMember="UI.ImportanceType/High"/>
                                 </Record>
                                 <Record Type="UI.DataField">
