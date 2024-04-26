@@ -80,7 +80,7 @@
                 <Annotation Term="Common.FieldControl"  EnumMember="Common.FieldControlType/ReadOnly" />
             </Annotations>
 
-            <Annotations Target="ODataDemo.Product">
+            <Annotations Target="ODataDemo.Product" >
                 <Annotation Term="UI.HeaderInfo">
                     <Record Type="UI.HeaderInfoType"  >
                         <PropertyValue Property="TypeName" String="{@i18n>ProductTableTitle}"/>
@@ -108,6 +108,22 @@
                         </Record>
                     </Collection>
                 </Annotation>
+                <Annotation Term="UI.Chart">
+					<Record>
+						<PropertyValue Property="ChartType"
+							EnumMember="UI.ChartType/Donut" />
+						<PropertyValue Property="Dimensions">
+							<Collection>
+								<PropertyPath>Name</PropertyPath>
+							</Collection>
+						</PropertyValue>
+						<PropertyValue Property="Measures">
+							<Collection>
+								<PropertyPath>Price</PropertyPath>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
                 <Annotation Term="UI.SelectionFields" >
                     <Collection >
                         <PropertyPath>Price</PropertyPath>
@@ -292,8 +308,7 @@
                                     </Record>
                                 </Collection>
                             </PropertyValue >
-                        </Record >
-                                
+                        </Record>
                     </Collection>
                 </Annotation>
                 <Annotation Term="UI.FieldGroup" Qualifier="GeneralInfoLeftSide">

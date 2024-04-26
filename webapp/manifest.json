@@ -53,7 +53,7 @@
         }
     },
     "sap.ui5": {
-        "flexEnabled": true,
+        "flexEnabled": false,
         "dependencies": {
             "minUI5Version": "1.120.7",
             "libs": {
@@ -107,6 +107,11 @@
             "extensions": {
                 "sap.ui.viewExtensions": {
                     "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "SmartFilterBarControlConfigurationExtension|Products": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.DatePickerFilter",
+                            "type": "XML"
+                        },
                         "ResponsiveTableColumnsExtension|Products": {
                             "className": "sap.ui.core.Fragment",
                             "fragmentName": "products.ext.fragments.ResponsiveTableColumns",
@@ -118,7 +123,39 @@
                             "type": "XML"
                         }
                     },
-                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {}
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "AfterFacet|Products|SupplierInfo": {
+                            "type": "XML",
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.CustomSectionObjectPage",
+                            "sap.ui.generic.app": {
+                                "title": "{{ChartText}}"
+                            }
+                        },
+                        "AfterHeaderFacet|Products|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::Rating": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.CustomHeaderField",
+                            "type": "XML"
+                        }
+                    }
+                },
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "controllerName": "products.ext.controller.ListReportExt",
+                        "sap.ui.generic.app": {
+                            "Products": {
+                                "EntitySet": "Products",
+                                "Actions": {
+                                    "_btn1": {
+                                        "id": "_btn1Button",
+                                        "text": "{{GetDataByRatingText}}",
+                                        "press": "getProductsByRating",
+                                        "requiresSelection": false
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
