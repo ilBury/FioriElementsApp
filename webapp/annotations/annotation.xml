@@ -155,6 +155,30 @@
                     </Record>
                 </Annotation>
 
+                <Annotation Term="UI.SelectionVariant" Qualifier="all">
+                    <Record>
+                        <PropertyValue Property="Text" String="{@i18n>AllTableProductsText}">
+                        </PropertyValue>
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                    <Record Type="UI.SelectOptionType">
+                                        <PropertyValue Property="PropertyName" PropertyPath="Category/Name" />
+                                        <PropertyValue Property="Ranges">
+                                            <Collection>
+                                                <Record Type="UI.SelectionRangeType">
+                                                    <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                                    <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/NE" />
+                                                    <PropertyValue Property="Low" String="" />
+                                                </Record>
+                                            </Collection>
+                                        </PropertyValue>
+                                    </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+
+
                 <Annotation Term="UI.SelectionVariant" Qualifier="Beverages">
                     <Record>
                         <PropertyValue Property="Text" String="{@i18n>CategoryBeveragesText}">
