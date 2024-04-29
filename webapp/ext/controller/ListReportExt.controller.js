@@ -1,8 +1,12 @@
 sap.ui.define([
     "sap/ui/model/Filter", 
     "sap/ui/comp/smartfilterbar/SmartFilterBar", 
-    "sap/m/DateRangeSelection"
-], function (Filter, SmartFilterBar, DateRangeSelection) {
+    "sap/m/DateRangeSelection",
+	"../mixin/functionImports"
+], function (Filter,
+	SmartFilterBar,
+	DateRangeSelection,
+    functionImports) {
     "use strict";
     return {
         getCustomAppStateDataExtension: function (oCustomData) {
@@ -57,20 +61,9 @@ sap.ui.define([
                 value2: sEndDate
             });
         },
-        getProductsByRating: function(oEvent) {
-            this.getView().getModel().callFunction("/GetProductsByRating", {
-                method: "GET",
-                urlParameters: {
-                    rating: 4
-                },
-                success: (oData) => {
 
-                   
-                },
-                error: (oError) => {
-                    
-                }
-            })
+        getProductsByRating: function() {
+            functionImports.getProductsByRating.call(this);
         }
     };
 });

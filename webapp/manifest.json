@@ -155,6 +155,24 @@
                                 }
                             }
                         }
+                    },
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "controllerName": "products.ext.controller.ObjectPageExt",
+                        "sap.ui.generic.app": {
+                            "Products": {
+                                "EntitySet": "Products",
+                                "Header": {
+                                    "Actions": {
+                                        "_btn2": {
+                                            "id": "_btn2Button",
+                                            "text": "Get products by rating",
+                                            "press": "getProductsByRating",
+                                            "requiresSelection": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -181,21 +199,20 @@
                         "quickVariantSelection": {
                             "variants": {
                                 "0": {
-                                  "key": "_tab1",
-                                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#all"
+                                    "key": "_tab1",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#all"
                                 },
                                 "1": {
-                                  "key": "_tab2",
-                                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Beverages"
+                                    "key": "_tab2",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Beverages"
                                 },
                                 "2": {
-                                  "key": "_tab3",
-                                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Electronics"
+                                    "key": "_tab3",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Electronics"
                                 },
                                 "3": {
-                                  "key": "_tab4",
-                                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Food"
-                
+                                    "key": "_tab4",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Food"
                                 }
                             }
                         },
