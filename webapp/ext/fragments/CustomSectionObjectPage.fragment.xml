@@ -1,0 +1,11 @@
+<core:FragmentDefinition 
+    xmlns:smartchart="sap.ui.comp.smartchart" 
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m"
+>
+    <smartchart:SmartChart id ="smartChartGeneral" enableAutoBinding="true"
+        entitySet="Products" 
+        persistencyKey="productsPriceChart">
+		
+    </smartchart:SmartChart>
+</core:FragmentDefinition>

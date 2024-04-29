@@ -1,0 +1,13 @@
+<c:FragmentDefinition xmlns:smartfield="sap.ui.comp.smartfield"
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core"
+>
+   <VBox>
+        <Label
+            labelFor="idSmartField"
+			showColon="true"
+            text="{i18n>ExtensionPrice}"   
+        />
+        <smartfield:SmartField id="idSmartField" value="{Price}"  enabled="false" />
+    </VBox>
+</c:FragmentDefinition>

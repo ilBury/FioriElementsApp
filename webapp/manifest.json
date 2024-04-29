@@ -1,181 +1,255 @@
 {
-  "_version": "1.59.0",
-  "sap.app": {
-    "id": "products",
-    "type": "application",
-    "i18n": "i18n/i18n.properties",
-    "applicationVersion": {
-      "version": "0.0.1"
-    },
-    "title": "Store",
-    "description": "Store of products",
-    "resources": "resources.json",
-    "sourceTemplate": {
-      "id": "@sap/generator-fiori:lrop",
-      "version": "1.13.2",
-      "toolsId": "40586e5d-fd72-4a7c-8ba0-de001a482e5e"
-    },
-    "dataSources": {
-      "mainService": {
-        "uri": "/V2/(S(3g0csrzc4YH1p06ejcq2oqpz))/OData/OData.svc/",
-        "type": "OData",
-        "settings": {
-          "annotations": [
-            "annotation"
-          ],
-          "localUri": "localService/metadata.xml",
-          "odataVersion": "2.0"
-        }
-      },
-      "annotation": {
-        "type": "ODataAnnotation",
-        "uri": "annotations/annotation.xml",
-        "settings": {
-          "localUri": "annotations/annotation.xml"
-        }
-      }
-    }
-  },
-  "sap.ui": {
-    "technology": "UI5",
-    "icons": {
-      "icon": "",
-      "favIcon": "",
-      "phone": "",
-      "phone@2": "",
-      "tablet": "",
-      "tablet@2": ""
-    },
-    "deviceTypes": {
-      "desktop": true,
-      "tablet": true,
-      "phone": true
-    }
-  },
-  "sap.ui5": {
-    "flexEnabled": true,
-    "dependencies": {
-      "minUI5Version": "1.120.7",
-      "libs": {
-        "sap.m": {},
-        "sap.ui.core": {},
-        "sap.ushell": {},
-        "sap.f": {},
-        "sap.ui.comp": {},
-        "sap.ui.generic.app": {},
-        "sap.suite.ui.generic.template": {}
-      }
-    },
-    "contentDensities": {
-      "compact": true,
-      "cozy": true
-    },
-    "models": {
-      "i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "settings": {
-          "bundleName": "products.i18n.i18n"
-        }
-      },
-      "": {
-        "dataSource": "mainService",
-        "preload": true,
-        "settings": {
-          "defaultBindingMode": "TwoWay",
-          "defaultCountMode": "Inline",
-          "refreshAfterChange": false,
-          "metadataUrlParams": {
-            "sap-value-list": "none"
-          },
-          "disableHeadRequestForToken": true
-        }
-      },
-      "@i18n": {
-        "type": "sap.ui.model.resource.ResourceModel",
-        "uri": "i18n/i18n.properties"
-      }
-    },
-    "resources": {
-      "css": []
-    },
-    "routing": {
-      "config": {},
-      "routes": [],
-      "targets": {}
-    }
-  },
-  "sap.ui.generic.app": {
-    "_version": "1.3.0",
-    "settings": {
-      "objectPageColumns": { 
-        "screenSizeXL": 4
-      },
-      "forceGlobalRefresh": false,
-      "objectPageHeaderType": "Dynamic",
-      "considerAnalyticalParameters": true,
-      "showDraftToggle": false
-    },
-    "pages": {
-      "ListReport|Products": {
-        "entitySet": "Products",
-        "component": {
-          "name": "sap.suite.ui.generic.template.ListReport",
-          "list": true,
-          "settings": {
-            "quickVariantSelection": {
-              "variants": {
-                "0": {
-                  "key": "_tab1",
-                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#all"
-                },
-                "1": {
-                  "key": "_tab2",
-                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Beverages"
-                },
-                "2": {
-                  "key": "_tab3",
-                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Electronics"
-                },
-                "3": {
-                  "key": "_tab4",
-                  "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Food"
+    "_version": "1.59.0",
+    "sap.app": {
+        "id": "products",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "Store",
+        "description": "Store of products",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:lrop",
+            "version": "1.13.2",
+            "toolsId": "40586e5d-fd72-4a7c-8ba0-de001a482e5e"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/V2/(S(3g0csrzc4YH1lr6ejcq2oqpz))/OData/OData.svc/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [
+                        "annotation"
+                    ],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
                 }
-              }
             },
-            "condensedTableLayout": true,
-            "smartVariantManagement": true,
-            "enableTableFilterInPageVariant": true,
-            "multiSelect": true,
-            "filterSettings": {
-              "dateSettings": {
-                "useDateRange": true
-              }
+            "annotation": {
+                "type": "ODataAnnotation",
+                "uri": "annotations/annotation.xml",
+                "settings": {
+                    "localUri": "annotations/annotation.xml"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.120.7",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.ushell": {},
+                "sap.f": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.suite.ui.generic.template": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "products.i18n.i18n"
+                }
             },
-            "dataLoadSettings": {
-							"loadDataOnAppLaunch": "always"
-						}
-          }
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    },
+                    "disableHeadRequestForToken": true
+                }
+            },
+            "@i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "uri": "i18n/i18n.properties"
+            }
+        },
+        "resources": {
+            "css": []
+        },
+        "routing": {
+            "config": {},
+            "routes": [],
+            "targets": {}
+        },
+        "extends": {
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "SmartFilterBarControlConfigurationExtension|Products": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.DatePickerFilter",
+                            "type": "XML"
+                        },
+                        "ResponsiveTableColumnsExtension|Products": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.ResponsiveTableColumns",
+                            "type": "XML"
+                        },
+                        "ResponsiveTableCellsExtension|Products": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.ResponsiveTableCells",
+                            "type": "XML"
+                        }
+                    },
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "AfterFacet|Products|SupplierInfo": {
+                            "type": "XML",
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.CustomSectionObjectPage",
+                            "sap.ui.generic.app": {
+                                "title": "{{ChartText}}"
+                            }
+                        },
+                        "AfterHeaderFacet|Products|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::Rating": {
+                            "className": "sap.ui.core.Fragment",
+                            "fragmentName": "products.ext.fragments.CustomHeaderField",
+                            "type": "XML"
+                        }
+                    }
+                },
+                "sap.ui.controllerExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {
+                        "controllerName": "products.ext.controller.ListReportExt",
+                        "sap.ui.generic.app": {
+                            "Products": {
+                                "EntitySet": "Products",
+                                "Actions": {
+                                    "_btn1": {
+                                        "id": "_btn1Button",
+                                        "text": "{{GetDataByRatingText}}",
+                                        "press": "getProductsByRating",
+                                        "requiresSelection": false
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {
+                        "controllerName": "products.ext.controller.ObjectPageExt",
+                        "sap.ui.generic.app": {
+                            "Products": {
+                                "EntitySet": "Products",
+                                "Header": {
+                                    "Actions": {
+                                        "_btn2": {
+                                            "id": "_btn2Button",
+                                            "text": "Get products by rating",
+                                            "press": "getProductsByRating",
+                                            "requiresSelection": false
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "sap.ui.generic.app": {
+        "_version": "1.3.0",
+        "settings": {
+            "objectPageColumns": {
+                "screenSizeXL": 4
+            },
+            "forceGlobalRefresh": false,
+            "objectPageHeaderType": "Dynamic",
+            "considerAnalyticalParameters": true,
+            "showDraftToggle": false
         },
         "pages": {
-          "ObjectPage|Products": {
-            "entitySet": "Products",
-            "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
-            "component": {
-              "name": "sap.suite.ui.generic.template.ObjectPage",
-              "settings": {
-                "showHeaderAsCarouselOnDesktop": true,
-                "showRelatedApps": true,
-                "gridTable": false,
-                "editableHeaderContent": false
-              }
+            "ListReport|Products": {
+                "entitySet": "Products",
+                "component": {
+                    "name": "sap.suite.ui.generic.template.ListReport",
+                    "list": true,
+                    "settings": {
+                        "quickVariantSelection": {
+                            "variants": {
+                                "0": {
+                                    "key": "_tab1",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#all"
+                                },
+                                "1": {
+                                    "key": "_tab2",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Beverages"
+                                },
+                                "2": {
+                                    "key": "_tab3",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Electronics"
+                                },
+                                "3": {
+                                    "key": "_tab4",
+                                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#Food"
+                                }
+                            }
+                        },
+                        "condensedTableLayout": true,
+                        "smartVariantManagement": true,
+                        "enableTableFilterInPageVariant": true,
+                        "multiSelect": true,
+                        "filterSettings": {
+                            "dateSettings": {
+                                "useDateRange": true
+                            }
+                        },
+                        "dataLoadSettings": {
+                            "loadDataOnAppLaunch": "always"
+                        }
+                    }
+                },
+                "pages": {
+                    "ObjectPage|Products": {
+                        "entitySet": "Products",
+                        "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
+                        "component": {
+                            "name": "sap.suite.ui.generic.template.ObjectPage",
+                            "settings": {
+                                "showHeaderAsCarouselOnDesktop": true,
+                                "showRelatedApps": true,
+                                "gridTable": false,
+                                "editableHeaderContent": false
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
+    },
+    "sap.fiori": {
+        "registrationIds": [],
+        "archeType": "transactional"
     }
-  },
-  "sap.fiori": {
-    "registrationIds": [],
-    "archeType": "transactional"
-  }
 }
