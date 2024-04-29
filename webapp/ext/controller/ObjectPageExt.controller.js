@@ -4,8 +4,10 @@ sap.ui.define([
     'use strict';
 
     return {
+        ...functionImports,
+
         getProductsByRating: function() {
-            functionImports.getProductsByRating.call(this);
+            this.showProductsByRating();
         }
     };
 });

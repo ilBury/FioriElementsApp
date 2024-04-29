@@ -2,14 +2,18 @@ sap.ui.define([
     "sap/ui/model/Filter", 
     "sap/ui/comp/smartfilterbar/SmartFilterBar", 
     "sap/m/DateRangeSelection",
-	"../mixin/functionImports"
+	"../mixin/functionImports",
+    "sap/ui/model/FilterOperator"
 ], function (Filter,
 	SmartFilterBar,
 	DateRangeSelection,
-    functionImports) {
+    functionImports,
+    FilterOperator) {
     "use strict";
     return {
-        getCustomAppStateDataExtension: function (oCustomData) {
+        ...functionImports,
+
+        getCustomAppStateDataExtension: function(oCustomData) {
             if (oCustomData) {
                 const oCustomFieldDate = this.oView.byId("CreateAtInput");
                 if (oCustomFieldDate) {
@@ -21,12 +25,10 @@ sap.ui.define([
             }
         },
         restoreCustomAppStateDataExtension: function (oCustomData) {
-            if (oCustomData) {
-                if (oCustomData.ReleaseDate) {
-                    const oDateRangeSelection = this.oView.byId("CreateAtInput");
-                    oDateRangeSelection.setDateValue(oCustomData.ReleaseDate.startDate);
-                    oDateRangeSelection.setDateValue(oCustomData.ReleaseDate.endDate);
-                }
+            if (oCustomData?.ReleaseDate) {
+                const oDateRangeSelection = this.oView.byId("CreateAtInput");
+                oDateRangeSelection.setDateValue(oCustomData.ReleaseDate.startDate);
+                oDateRangeSelection.setDateValue(oCustomData.ReleaseDate.endDate);
             }
         },
         onBeforeRebindTableExtension: function(oEvent) {
@@ -36,7 +38,7 @@ sap.ui.define([
             const oSmartFilterBar = this.byId(oSmartTable.getSmartFilterId());
             
             if (oSmartFilterBar instanceof SmartFilterBar) {
-                const oCustomControl = oSmartFilterBar.getControlByKey("filter_key");
+                const oCustomControl = oSmartFilterBar.getControlByKey("dateFilter");
                 
                 if (oCustomControl instanceof DateRangeSelection) {
                     const oReleaseDateFilter = this._getReleaseDateFilter(oCustomControl);
@@ -56,14 +58,15 @@ sap.ui.define([
         
             return new Filter({
                 path: "ReleaseDate",
-                operator: "BT",
+                operator: FilterOperator.BT,
                 value1: sStartDate,
                 value2: sEndDate
             });
         },
 
         getProductsByRating: function() {
-            functionImports.getProductsByRating.call(this);
+            
+            this.showProductsByRating();
         }
     };
 });

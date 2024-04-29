@@ -5,8 +5,7 @@
 >
     <smartchart:SmartChart id ="smartChartGeneral" enableAutoBinding="true"
         entitySet="Products" 
-        persistencyKey="PKeyChartExample9" 
-        uiStateChange="onUiStateChange">
+        persistencyKey="productsPriceChart">
 		
     </smartchart:SmartChart>
 </core:FragmentDefinition>

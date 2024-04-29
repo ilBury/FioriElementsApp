@@ -1,12 +1,11 @@
 sap.ui.define([
 	"sap/m/MessageToast",
 	"sap/m/MessageBox"
-], function(MessageToast, MessageBox) {
+], (MessageToast, MessageBox) => {
 	"use strict";
 
 	return  {
-        getProductsByRating: function() {
-            debugger
+        showProductsByRating: function() {
             this.getView().getModel().callFunction("/GetProductsByRating", {
                 method: "GET",
                 urlParameters: {
