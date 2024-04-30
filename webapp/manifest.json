@@ -165,7 +165,7 @@
                                     "Actions": {
                                         "_btn2": {
                                             "id": "_btn2Button",
-                                            "text": "Get products by rating",
+                                            "text": "{{GetDataByRatingText}}",
                                             "press": "getProductsByRating",
                                             "requiresSelection": false
                                         }
@@ -233,6 +233,19 @@
                 "pages": {
                     "ObjectPage|Products": {
                         "entitySet": "Products",
+                        "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
+                        "component": {
+                            "name": "sap.suite.ui.generic.template.ObjectPage",
+                            "settings": {
+                                "showHeaderAsCarouselOnDesktop": true,
+                                "showRelatedApps": true,
+                                "gridTable": false,
+                                "editableHeaderContent": false
+                            }
+                        }
+                    },
+                    "ObjectPage|Suppliers": {
+                        "entitySet": "Suppliers",
                         "defaultLayoutTypeIfExternalNavigation": "MidColumnFullScreen",
                         "component": {
                             "name": "sap.suite.ui.generic.template.ObjectPage",

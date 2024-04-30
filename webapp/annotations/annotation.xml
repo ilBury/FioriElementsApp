@@ -387,9 +387,10 @@
                     <Record Type="UI.FieldGroupType">
                         <PropertyValue Property="Data">
                             <Collection>
-                                <Record Type="UI.DataField">
-                                    <PropertyValue Property="Value" Path="Supplier/Name" />
+                                <Record Type="UI.DataFieldWithNavigationPath">
                                     <PropertyValue Property="Label" String="{@i18n>NameText}" />
+                                    <PropertyValue Property="Value" Path="Supplier/Name" />
+                                    <PropertyValue Property="Target" NavigationPropertyPath="Supplier" />
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="Supplier/Concurrency" />
@@ -413,6 +414,93 @@
                                 </Record>
                                 <Record Type="UI.DataField">
                                     <PropertyValue Property="Value" Path="Supplier/Address/ZipCode" />
+                                    <PropertyValue Property="Label" String="{@i18n>ZipCodeText}" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>    
+            </Annotations>
+            <Annotations Target="ODataDemo.Supplier" >
+                <Annotation Term="UI.HeaderInfo">
+                    <Record Type="UI.HeaderInfoType"  >
+                        <PropertyValue Property="TypeName" String="{@i18n>SupplierTitle}"/>
+                        <PropertyValue Property="TypeNamePlural" String="{@i18n>SupplierTitlePlural}" />
+                        <PropertyValue Property="Title" >
+                            <Record Type="UI.DataField" >
+                                <PropertyValue Property="Value" Path="Name" />
+                            </Record >
+                        </PropertyValue>
+                    </Record >
+                </Annotation >
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SupplierHedData" />
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="SupplierHedData">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>CityText}" />
+                                    <PropertyValue Property="Value" Path="Address/City" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>CountryText}" />
+                                    <PropertyValue Property="Value" Path="Address/Country" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.CollectionFacet">
+                            <PropertyValue Property="ID" String="SupplierInfo" />
+                            <PropertyValue Property="Label" String="{@i18n>SupplierInformationText}"/>
+                            <PropertyValue Property="Facets">
+                                <Collection >
+                                    <Record Type="UI.ReferenceFacet">
+                                        <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#SupplierInfo" />
+                                    </Record>
+                                </Collection>
+                            </PropertyValue >
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.FieldGroup" Qualifier="SupplierInfo">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="{@i18n>NameText}" />
+                                    <PropertyValue Property="Value" Path="Name" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Concurrency" />
+                                    <PropertyValue Property="Label" String="{@i18n>ConcurrencyText}" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/State" />
+                                    <PropertyValue Property="Label" String="{@i18n>StateText}" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/Country" />
+                                    <PropertyValue Property="Label" String="{@i18n>CountryText}" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/City" />
+                                    <PropertyValue Property="Label" String="{@i18n>CityText}" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/Street" />
+                                    <PropertyValue Property="Label" String="{@i18n>StreetText}" />
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Value" Path="Address/ZipCode" />
                                     <PropertyValue Property="Label" String="{@i18n>ZipCodeText}" />
                                 </Record>
                             </Collection>
