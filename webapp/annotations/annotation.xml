@@ -421,6 +421,7 @@
                     </Record>
                 </Annotation>    
             </Annotations>
+            
             <Annotations Target="ODataDemo.Supplier" >
                 <Annotation Term="UI.HeaderInfo">
                     <Record Type="UI.HeaderInfoType"  >
