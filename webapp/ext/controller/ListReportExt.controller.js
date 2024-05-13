@@ -64,8 +64,7 @@ sap.ui.define([
             });
         },
 
-        getProductsByRating: function() {
-            
+        getProductsByRating: function() {    
             this.showProductsByRating();
         }
     };
