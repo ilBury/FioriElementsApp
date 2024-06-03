@@ -3,9 +3,15 @@
     xmlns:core="sap.ui.core" 
     xmlns="sap.m"
 >
-    <smartchart:SmartChart id ="smartChartGeneral" enableAutoBinding="true"
+    <VBox
+    >
+        <smartchart:SmartChart id ="smartChartGeneral" enableAutoBinding="true"
         entitySet="Products" 
         persistencyKey="productsPriceChart">
 		
-    </smartchart:SmartChart>
+        </smartchart:SmartChart>
+
+
+    </VBox>
+    
 </core:FragmentDefinition>

@@ -1,7 +1,7 @@
 {
   "_version": "1.59.0",
   "sap.app": {
-    "id": "products",
+    "id": "fe.products",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -37,9 +37,9 @@
     },
     "crossNavigation": {
       "inbounds": {
-        "products-managing": {
-          "semanticObject": "products",
-          "action": "managing",
+        "feproduct-display": {
+          "semanticObject": "feproduct",
+          "action": "display",
           "title": "{{flpTitle}}",
           "signature": {
             "parameters": {},
@@ -87,7 +87,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "products.i18n.i18n"
+          "bundleName": "fe.products.i18n.i18n"
         }
       },
       "": {
@@ -122,17 +122,17 @@
           "sap.suite.ui.generic.template.ListReport.view.ListReport": {
             "SmartFilterBarControlConfigurationExtension|Products": {
               "className": "sap.ui.core.Fragment",
-              "fragmentName": "products.ext.fragments.DatePickerFilter",
+              "fragmentName": "fe.products.ext.fragments.DatePickerFilter",
               "type": "XML"
             },
             "ResponsiveTableColumnsExtension|Products": {
               "className": "sap.ui.core.Fragment",
-              "fragmentName": "products.ext.fragments.ResponsiveTableColumns",
+              "fragmentName": "fe.products.ext.fragments.ResponsiveTableColumns",
               "type": "XML"
             },
             "ResponsiveTableCellsExtension|Products": {
               "className": "sap.ui.core.Fragment",
-              "fragmentName": "products.ext.fragments.ResponsiveTableCells",
+              "fragmentName": "fe.products.ext.fragments.ResponsiveTableCells",
               "type": "XML"
             }
           },
@@ -140,21 +140,21 @@
             "AfterFacet|Products|SupplierInfo": {
               "type": "XML",
               "className": "sap.ui.core.Fragment",
-              "fragmentName": "products.ext.fragments.CustomSectionObjectPage",
+              "fragmentName": "fe.products.ext.fragments.CustomSectionObjectPage",
               "sap.ui.generic.app": {
                 "title": "{{ChartText}}"
               }
             },
             "AfterHeaderFacet|Products|headerEditable::com.sap.vocabularies.UI.v1.DataPoint::Rating": {
               "className": "sap.ui.core.Fragment",
-              "fragmentName": "products.ext.fragments.CustomHeaderField",
+              "fragmentName": "fe.products.ext.fragments.CustomHeaderField",
               "type": "XML"
             }
           }
         },
         "sap.ui.controllerExtensions": {
           "sap.suite.ui.generic.template.ListReport.view.ListReport": {
-            "controllerName": "products.ext.controller.ListReportExt",
+            "controllerName": "fe.products.ext.controller.ListReportExt",
             "sap.ui.generic.app": {
               "Products": {
                 "EntitySet": "Products",
@@ -164,13 +164,20 @@
                     "text": "{{GetDataByRatingText}}",
                     "press": "getProductsByRating",
                     "requiresSelection": false
+                  },
+                  "crossAppNavigation": {
+                    "id": "crossAppNavigationButton",
+                    "text": "{{NavigateToOtherAppText}}",
+                    "press": "onNavToFreestyleApp",
+                    "global": false,
+                    "logicalAction": "Create"
                   }
                 }
               }
             }
           },
           "sap.suite.ui.generic.template.ObjectPage.view.Details": {
-            "controllerName": "products.ext.controller.ObjectPageExt",
+            "controllerName": "fe.products.ext.controller.ObjectPageExt",
             "sap.ui.generic.app": {
               "Products": {
                 "EntitySet": "Products",
@@ -180,6 +187,12 @@
                       "id": "_btn2Button",
                       "text": "{{GetDataByRatingText}}",
                       "press": "getProductsByRating",
+                      "requiresSelection": false
+                    },
+                    "_btn3": {
+                      "id": "_btn3Button",
+                      "text": "{{NavigateToOtherAppText}}",
+                      "press": "onNavToFreestyleApp",
                       "requiresSelection": false
                     }
                   }
@@ -277,5 +290,9 @@
   "sap.fiori": {
     "registrationIds": [],
     "archeType": "transactional"
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "feproducts"
   }
 }

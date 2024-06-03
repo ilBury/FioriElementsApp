@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: products.application
+  name: fe.products
 type: application
 framework:
   name: SAPUI5
@@ -31,13 +31,12 @@ server:
         backend:
           - path: /V2
             url: https://services.odata.org
-            destination: Odata
     - name: sap-fe-mockserver
       beforeMiddleware: csp
       configuration:
         mountPath: /
         services:
-          - urlPath: /V2/(S(3g0csrzc4YH1lr6ejcq2oqpz))/OData/OData.svc
+          - urlPath: /V2/(S(3g0csrzc4ao3kowejcbcoqzz))/OData/OData.svc
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true
@@ -45,5 +44,5 @@ server:
     - name: fiori-tools-preview
       afterMiddleware: fiori-tools-appreload
       configuration:
-        component: products.application
+        component: fe.products
         ui5Theme: sap_horizon

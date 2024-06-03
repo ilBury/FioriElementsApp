@@ -2,7 +2,7 @@
 
 specVersion: "3.1"
 metadata:
-  name: products.application
+  name: fe.products
 type: application
 server:
   customMiddleware:
@@ -18,7 +18,6 @@ server:
         backend:
           - path: /V2
             url: https://services.odata.org
-            destination: Odata
     - name: fiori-tools-appreload
       afterMiddleware: compression
       configuration:
@@ -30,7 +29,7 @@ server:
       configuration:
         mountPath: /
         services:
-          - urlPath: /V2/(S(3g0csrzc4YH1lr6ejcq2oqpz))/OData/OData.svc
+          - urlPath: /V2/(S(3g0csrzc4ao3kowejcbcoqzz))/OData/OData.svc
             metadataPath: ./webapp/localService/metadata.xml
             mockdataPath: ./webapp/localService/data
             generateMockData: true
