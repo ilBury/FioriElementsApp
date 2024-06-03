@@ -6,7 +6,7 @@
       "source": "^/V2/(.*)$",
       "target": "/V2/$1",
       "destination": "Odata",
-      "authenticationType": "none",
+      "authenticationType": "xsuaa",
       "csrfProtection": false
     },
     {

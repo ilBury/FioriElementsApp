@@ -66,6 +66,20 @@ sap.ui.define([
 
         getProductsByRating: function() {    
             this.showProductsByRating();
+        }, 
+
+        onNavToFreestyleApp: function() {
+            sap.ushell.Container.getServiceAsync("CrossApplicationNavigation").then((oService) => {
+                const sHref = (oService &&
+                    oService.hrefForExternal({
+                        target: {
+                            semanticObject: "appproducts",
+                            action: "managing"
+                        }   
+                    })
+                ) || ""
+                oService.toExternal({target: {shellHash: sHref}})
+            })
         }
     };
 });

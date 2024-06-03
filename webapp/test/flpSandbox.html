@@ -44,10 +44,10 @@
                 }
             },
             applications: {
-                "products-tile": {
+                "feproducts-tile": {
                     title: "Store",
                     description: "An SAP Fiori application.",
-                    additionalInformation: "SAPUI5.Component=products",
+                    additionalInformation: "SAPUI5.Component=fe.products",
                     applicationType: "URL",
                     url: "../"
                 }
@@ -65,9 +65,9 @@
         data-sap-ui-theme="sap_horizon"
         data-sap-ui-compatVersion="edge"
         data-sap-ui-language="en"
-        data-sap-ui-resourceroots='{"products": "../"}'
+        data-sap-ui-resourceroots='{"fe.products": "../"}'
         data-sap-ui-frameOptions="allow"
-        data-sap-ui-flexibilityServices='[{"applyConnector":"products/test/changes_loader", "custom":true}, {"connector": "LocalStorageConnector"}]'>
+        data-sap-ui-flexibilityServices='[{"applyConnector":"fe/products/test/changes_loader", "custom":true}, {"connector": "LocalStorageConnector"}]'>
     </script>
     <script id="locate-reuse-libs" src="./locate-reuse-libs.js" data-sap-ui-manifest-uri="../manifest.json">
     </script>

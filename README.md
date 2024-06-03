@@ -1,16 +1,16 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Apr 22 2024 12:30:52 GMT+0000 (Coordinated Universal Time)|
+|**Generation Date and Time**<br>Wed May 29 2024 14:40:03 GMT+0300 (Moscow Standard Time)|
 |**App Generator**<br>@sap/generator-fiori-elements|
-|**App Generator Version**<br>1.13.2|
-|**Generation Platform**<br>SAP Business Application Studio|
+|**App Generator Version**<br>1.13.1|
+|**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>List Report Page V2|
-|**Service Type**<br>SAP System (ABAP On Premise)|
-|**Service URL**<br>https://services.odata.org/V2/(S(3g0csrzc4YH1lr6ejcq2oqpz))/OData/OData.svc/
-|**Module Name**<br>application|
+|**Service Type**<br>OData Url|
+|**Service URL**<br>https://services.odata.org/V2/(S(3g0csrzc4ao3kowejcbcoqzz))/OData/OData.svc/
+|**Module Name**<br>products|
 |**Application Title**<br>Store|
-|**Namespace**<br>products|
+|**Namespace**<br>fe|
 |**UI5 Theme**<br>sap_horizon|
 |**UI5 Version**<br>1.120.0|
 |**Enable Code Assist Libraries**<br>False|
@@ -19,7 +19,7 @@
 |**Main Entity**<br>Products|
 |**Navigation Entity**<br>Supplier|
 
-## application
+## products
 
 An SAP Fiori application.
 
